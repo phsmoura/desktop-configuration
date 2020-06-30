@@ -1,0 +1,9 @@
+---
+- name: Installing essential programs
+  hosts: localhost
+  become: yes
+  roles:
+  - utils
+  - docker
+  - forticlient
+  - teams
