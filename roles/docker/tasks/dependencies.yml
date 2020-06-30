@@ -1,0 +1,27 @@
+---
+- name: Installing dependencies
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    state: present
+  loop:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - gnupg-agent
+    - software-properties-common
+  when: ansible_os_family == 'Debian'
+
+- dnf:
+    name: dnf-plugins-core
+    state: present
+  when: ansible_distribution == 'Fedora'
+
+- yum:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - yum-utils
+    - device-mapper-persistent-data
+    - lvm2
+  when: ansible_distribution == 'Centos'

@@ -1,0 +1,14 @@
+---
+- name: Add VirtualBox on repository
+  # Goes for Debian and Ubuntu
+  block:
+
+  - apt_key:
+      url: "https://www.virtualbox.org/download/oracle_vbox.asc"
+      state: present
+
+  - apt_repository:
+      repo: "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
+      state: present
+
+  when: ansible_os_family == 'Debian'

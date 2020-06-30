@@ -1,0 +1,7 @@
+---
+- name: Installing Sublime
+  apt:
+    name: sublime-text
+    update_cache: yes
+    state: present
+  when: ansible_os_family == 'Debian'

@@ -1,0 +1,13 @@
+---
+- name: Installing VirtualBox
+  apt:
+    name: virtualbox
+    update_cache: yes
+    state: present
+  when: ansible_os_family == 'Debian'
+
+- name: Installing VirtualBox
+  yum:
+    name: virtualbox
+    state: present
+  when: ansible_os_family == 'RedHat'

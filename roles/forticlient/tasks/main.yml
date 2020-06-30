@@ -1,0 +1,4 @@
+---
+# tasks file for roles/forticlient
+- import_tasks: repository.yml
+- import_tasks: install.yml

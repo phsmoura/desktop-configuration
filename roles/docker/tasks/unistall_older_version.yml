@@ -1,0 +1,34 @@
+---
+- name: Uninstalling Docker if present
+  apt:
+    name: "{{ item }}"
+    state: absent
+  loop:
+    - docker-ce
+    - docker-engine
+    - docker.io
+    - containerd
+    - runc
+  when: ansible_os_family == 'Debian'
+
+- dnf:
+    name: "{{ item }}"
+    state: absent
+  loop:
+    - docker-ce
+    - docker-engine
+    - docker.io
+    - containerd
+    - runc
+  when: ansible_distribution == 'Fedora'
+
+- yum:
+    name: "{{ item }}"
+    state: absent
+  loop:
+    - docker-ce
+    - docker-engine
+    - docker.io
+    - containerd
+    - runc
+  when: ansible_distribution == 'Centos'

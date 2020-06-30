@@ -1,0 +1,38 @@
+---
+# tasks file for utils
+- name: Installing vim,htop,git,pip3 and virtualenv
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    state: present
+  loop:
+    - vim
+    - htop
+    - git
+    - python3-pip
+    - python3-virtualenv
+    - python-apt
+  when: ansible_facts['os_family'] == 'Debian'
+
+- dnf:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - vim
+    - htop
+    - git
+    - python3-pip
+    - python3-virtualenv
+  when: ansible_distribution == 'Fedora'
+
+- yum:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - vim
+    - htop
+    - git
+    - python3-pip
+    - python3-virtualenv
+  when: ansible_distribution == 'Centos'
+  

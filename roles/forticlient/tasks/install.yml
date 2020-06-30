@@ -1,0 +1,17 @@
+---
+- name: Installing Forticlient
+  apt:
+    name: forticlient
+    update_cache: yes
+    state: present
+  when: ansible_distribution == 'Ubuntu'
+
+- dnf:
+    name: forticlient
+    state: present
+  when: ansible_distribution == 'Fedora'
+
+- yum:
+    name: forticlient
+    state: present
+  when: ansible_distribution == 'Centos'
