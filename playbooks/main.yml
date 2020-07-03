@@ -1,2 +1,3 @@
 ---
 - import_playbook: essential.yml
+- import_playbook: optional.yml

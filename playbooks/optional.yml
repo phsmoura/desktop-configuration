@@ -1,0 +1,6 @@
+---
+- name: Installing optional programs
+  hosts: localhost
+  become: yes
+  roles:
+  - sublime
