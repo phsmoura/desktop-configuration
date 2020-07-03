@@ -6,13 +6,14 @@
     update_cache: yes
     state: present
   loop:
+    - python3-apt
+    - openfortivpn
     - vim
     - htop
     - git
     - python3-pip
     - python3-virtualenv
-    - python-apt
-  when: ansible_facts['os_family'] == 'Debian'
+  when: ansible_distribution == 'Ubuntu'
 
 - dnf:
     name: "{{ item }}"
