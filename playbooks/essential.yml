@@ -5,5 +5,4 @@
   roles:
   - utils
   - docker
-  - forticlient
   - teams
