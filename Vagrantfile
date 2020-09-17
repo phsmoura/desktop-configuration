@@ -17,11 +17,10 @@ Vagrant.configure("2") do |config|
     config.vm.provision "file", source: "roles", destination: "/home/vagrant/"
     config.vm.provision "file", source: "install_ansible.sh", destination: "/home/vagrant/"
     config.vm.provision "shell", inline: <<-SHELL
-    sudo bash /home/vagrant/install_ansible.sh
-    sudo add-apt-repository ppa:gnome3-team/gnome3
-    sudo apt-get update
-    sudo apt-get install gnome-shell ubuntu-gnome-desktop -y
-    sudo cp -a /home/vagrant/roles /etc/ansible
+      sudo add-apt-repository ppa:gnome3-team/gnome3
+      sudo apt-get update
+      sudo apt-get install gnome-shell ubuntu-gnome-desktop -y
+      sudo cp -a /home/vagrant/roles /etc/ansible
     SHELL
   end
 end
