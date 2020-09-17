@@ -1,6 +1,6 @@
 ---
 # tasks file for utils
-- name: Installing vim,htop,git,pip3 and virtualenv
+- name: Installing vim,htop,git,pip3,openfortivpn and virtualenv on Ubuntu
   apt:
     name: "{{ item }}"
     update_cache: yes
@@ -9,28 +9,33 @@
     - python3-apt
     - openfortivpn
     - vim
+    - tmux
     - htop
     - git
     - python3-pip
     - python3-virtualenv
   when: ansible_distribution == 'Ubuntu'
 
-- dnf:
+- name: Installing vim,htop,git,pip3,openfortivpn and virtualenv on Fedora
+  dnf:
     name: "{{ item }}"
     state: present
   loop:
     - vim
+    - tmux
     - htop
     - git
     - python3-pip
     - python3-virtualenv
   when: ansible_distribution == 'Fedora'
 
-- yum:
+- name: Installing vim,htop,git,pip3,openfortivpn and virtualenv on CentOS
+  yum:
     name: "{{ item }}"
     state: present
   loop:
     - vim
+    - tmux
     - htop
     - git
     - python3-pip
