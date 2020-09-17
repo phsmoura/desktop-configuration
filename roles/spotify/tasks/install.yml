@@ -1,0 +1,7 @@
+---
+- name: Installing Spotify
+  apt:
+    name: spotify-client
+    update_cache: yes
+    state: present
+  when: ansible_os_family == 'Debian'

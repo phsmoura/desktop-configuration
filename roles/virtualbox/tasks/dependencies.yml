@@ -1,0 +1,17 @@
+---
+- name: Installing dependencies for Virtualbox
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    state: present
+  loop:
+    - libqt5core5a
+    - libqt5gui5 
+    - libqt5opengl5
+    - libqt5printsupport5
+    - libqt5widgets5
+    - libqt5x11extras5
+    - libsdl1.2debian
+    - python2.7
+    - libsdl-ttf2.0-0
+  when: ansible_distribution == 'Ubuntu'

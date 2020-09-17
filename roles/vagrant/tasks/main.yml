@@ -1,0 +1,7 @@
+---
+# tasks file for roles/vagrant
+- name: Download and extract Vagrant
+  unarchive:
+    src: https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_linux_amd64.zip
+    dest: /usr/local/bin
+    remote_src: yes

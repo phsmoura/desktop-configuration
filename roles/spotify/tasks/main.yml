@@ -1,0 +1,4 @@
+---
+# tasks file for roles/spotify
+- import_tasks: repository.yml
+- import_tasks: install.yml

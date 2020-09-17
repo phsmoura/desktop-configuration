@@ -1,0 +1,14 @@
+---
+- name: Add Spotify on repository
+  # Goes for Debian and Ubuntu
+  block:
+
+  - apt_key:
+      url: "https://download.spotify.com/debian/pubkey.gpg"
+      state: present
+
+  - apt_repository:
+      repo: "deb http://repository.spotify.com stable non-free"
+      state: present
+
+  when: ansible_os_family == 'Debian'
