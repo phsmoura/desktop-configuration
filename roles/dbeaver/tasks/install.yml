@@ -1,0 +1,11 @@
+---
+- name: Installing Dbeaver
+  apt:
+    deb: https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
+    state: present
+  when: ansible_os_family == 'Debian'
+
+- yum:
+    name: https://dbeaver.io/files/dbeaver-ce-latest-stable.x86_64.rpm
+    state: present
+  when: ansible_os_family == 'CentOS'

@@ -1,0 +1,11 @@
+---
+- name: Installing java on Ubuntu
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    state: present
+  loop:
+    - openjdk-8-jre-headless
+    # - openjdk-11-jre-headless
+    - openjdk-11-jdk-headless
+  when: ansible_distribution == 'Ubuntu'
