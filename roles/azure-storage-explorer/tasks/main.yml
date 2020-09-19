@@ -1,0 +1,19 @@
+---
+# tasks file for roles/azure-storage-explorer
+- name: Create a directory for Azure Storage Explore
+  file:
+    path: /opt/storage-explorer
+    state: directory
+    mode: '0755'
+
+- name: Download Azure Storage Explore to /opt
+  unarchive:
+    src: https://go.microsoft.com/fwlink/?LinkId=722418&clcid=0x416
+    dest: /opt/storage-explorer/
+    remote_src: yes
+
+- name: Insert alias to bash_profile
+  lineinfile:
+    path: $HOME/.bash_profile
+    line: alias storage-explorer='bash /opt/storage-explorer'
+    insertafter: EOF
