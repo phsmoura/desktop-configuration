@@ -1,16 +1,14 @@
 # Desktop Configuration
 This repository configures the user's machine with Ansible.
 Scripts on this repo were tested on the following OS:
-- [x] Ubuntu 20.04
-- [ ] Debian
-- [ ] Fedora
-- [ ] CentOS
+
+* [x] Ubuntu 20.04
 
 ## Getting Started
 This repository, in addition to the roles and playbooks used by Ansible, there is also a Vagrantfile that has the purpose of creating a test environment to run Ansible scripts.
 
 ### Prerequisites
-Para poder rodar o Vagrantfile é necessário ter instalado o **VirtualBox** e o **Vagrant**. Há a possibilidade de utilizar outros virtualizadores, mas isso pode levar na alteração do Vagrantfile.
+In order to run Vagrantfile it is necessary to have **VirtualBox** and **Vagrant** installed. There is a possibility to use other virtualizers, but this can lead to the change of Vagrantfile.
 
 - [VirtualBox Instalation](https://www.virtualbox.org/wiki/Downloads)
 - [Vagrant Instalation](https://www.vagrantup.com/intro/getting-started/install.html)
